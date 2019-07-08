@@ -58,6 +58,12 @@
 						"definition": "docker build",
 						"command": "docker build -t todoapp:latest .",
 						"properties": null
+					},
+					{
+						"name": "Fake test.xml",
+						"definition": "Fake test.xml",
+						"command": "echo \u003e test.xml",
+						"properties": null
 					}
 				],
 				"exit_actions": {
