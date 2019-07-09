@@ -42,12 +42,6 @@
 						"properties": null
 					},
 					{
-						"name": "Build",
-						"definition": "Build",
-						"command": "bundle install",
-						"properties": null
-					},
-					{
 						"name": "Run spec tests",
 						"definition": "Run spec tests",
 						"command": "rake ci:spec",
@@ -60,8 +54,8 @@
 						"properties": null
 					},
 					{
-						"name": "Fake test.xml",
-						"definition": "Fake test.xml",
+						"name": "test.xml",
+						"definition": "test.xml",
 						"command": "echo \u003e test.xml",
 						"properties": null
 					}
