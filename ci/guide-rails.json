@@ -72,12 +72,6 @@
 						"name": "ruby-todo",
 						"steps": [
 							{
-								"name": "Print Env",
-								"definition": "Print Environment",
-								"command": "printenv | sort",
-								"properties": null
-							},
-							{
 								"name": "Workspace",
 								"definition": "Default workspace",
 								"command": "echo 'Freeform build steps'",
@@ -95,7 +89,10 @@
 								"command": "echo \u003e test.xml",
 								"properties": null
 							}
-						]
+						],
+						"docker_options": {
+							"repository": "pipeline-image-ruby-tools"
+						}
 					}
 				]
 			}
