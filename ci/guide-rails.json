@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"version": 1
+		"version": 2
 	},
 	"application": {
 		"name": "ruby-todo",
@@ -28,36 +28,9 @@
 			{
 				"name": "Build",
 				"segment_type": "build",
-				"job_steps": [
-					{
-						"name": "Print Env",
-						"definition": "Print Environment",
-						"command": "printenv | sort",
-						"properties": null
-					},
-					{
-						"name": "Workspace",
-						"definition": "Default workspace",
-						"command": "echo 'Freeform build steps'",
-						"properties": null
-					},
-					{
-						"name": "docker build",
-						"definition": "docker build",
-						"command": "docker build -t todoapp:latest .",
-						"properties": null
-					},
-					{
-						"name": "test.xml",
-						"definition": "test.xml",
-						"command": "echo \u003e test.xml",
-						"properties": null
-					}
-				],
 				"exit_actions": {
 					"default": {
 						"code_analysis": {
-							"publish": false,
 							"properties": null
 						}
 					},
@@ -72,10 +45,7 @@
 					}
 				},
 				"deployment_strategy": {},
-				"application_init": {
-					"command": "",
-					"arguments": null
-				},
+				"application_init": {},
 				"instance_tags": [
 					{
 						"name": "application.name",
@@ -96,13 +66,43 @@
 						"UnhealthyThresholdCount": 0
 					}
 				},
-				"cache_info": {}
+				"cache_info": {},
+				"tasks": [
+					{
+						"name": "ruby-todo",
+						"steps": [
+							{
+								"name": "Print Env",
+								"definition": "Print Environment",
+								"command": "printenv | sort",
+								"properties": null
+							},
+							{
+								"name": "Workspace",
+								"definition": "Default workspace",
+								"command": "echo 'Freeform build steps'",
+								"properties": null
+							},
+							{
+								"name": "docker build",
+								"definition": "docker build",
+								"command": "docker build -t todoapp:latest .",
+								"properties": null
+							},
+							{
+								"name": "test.xml",
+								"definition": "test.xml",
+								"command": "echo \u003e test.xml",
+								"properties": null
+							}
+						]
+					}
+				]
 			}
 		],
 		"exit_actions": {
 			"default": {
 				"fetch_logs": true,
-				"notifications": [],
 				"code_analysis": {
 					"publish": true,
 					"properties": null
@@ -112,14 +112,9 @@
 		},
 		"default_properties": null,
 		"deployment_files": [],
-		"application_init": {
-			"command": "",
-			"arguments": null
-		},
+		"application_init": {},
 		"process": {
-			"init": {
-				"command": ""
-			}
+			"init": {}
 		},
 		"releases": []
 	},
