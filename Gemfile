@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
-gem 'puma'
+gem 'puma', '>= 4.3.8'
 gem 'mongoid', '~> 5.1.0'
 
 group :development, :test do
